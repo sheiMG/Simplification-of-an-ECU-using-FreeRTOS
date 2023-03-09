@@ -1,7 +1,5 @@
 # Trabajo de Fin de Grado: Control de elementos de un automóvil mediante un sistema empotrado
 
-**Este sería el README de tu proyecto. Consulta las [instrucciones de
-instalación](INSTALL.md)
 
 ### Autor(a): Sheila Martínez Gómez
 ### Tutor(a)(es): Jesús González Peñalver
