@@ -6,10 +6,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
-\documentclass[11pt, a4paper]{book}
+\documentclass[12pt, a4paper, openany]{book}
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-\usepackage[utf8]{inputenc}
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[utf8]{inputenc}
 \usepackage{listings} % para insertar código con formato similar al editor
 \usepackage[spanish, es-tabla]{babel} % Selecciona el español para palabras introducidas automáticamente, p.ej. "septiembre" en la fecha y especifica que se use la palabra Tabla en vez de Cuadro
 \usepackage{url} % ,href} %para incluir URLs e hipervínculos dentro del texto (aunque hay que instalar href)
@@ -28,25 +28,55 @@
 	linkcolor=black,	% color of internal links
 	urlcolor=cyan		% color of external links
 }
-\renewcommand{\familydefault}{\sfdefault}
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
 \fancyhead[L]{} % Empty left header
 \fancyhead[C]{} % Empty center header
-\fancyhead[R]{Me Llamo Así} % My name
+\fancyhead[R]{Sheila Martínez Gómez} % My name
 \fancyfoot[L]{} % Empty left footer
 \fancyfoot[C]{} % Empty center footer
 \fancyfoot[R]{\thepage} % Page numbering for right footer
 %\renewcommand{\headrulewidth}{0pt} % Remove header underlines
 \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
 \setlength{\headheight}{13.6pt} % Customize the height of the header
-
+%\renewcommand{\familydefault}{\sfdefault}
 \usepackage{titlesec, blindtext, color}
+
+
 \definecolor{gray75}{gray}{0.75}
+\definecolor{lightpurple}{HTML}{eeddff}
+\definecolor{deeppurple}{HTML}{c58cff}
+
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 \setcounter{secnumdepth}{4}
-\usepackage[Lenny]{fncychap}
+\usepackage[Bjornstrup]{fncychap}
+
+\renewcommand\DOCH{%
+  \settowidth{\py}{\CNoV\thechapter}
+  \addtolength{\py}{-10pt}
+  \fboxsep=0pt%
+  \colorbox{lightpurple}{\rule{0pt}{40pt}\parbox[b]{\textwidth}{\hfill}}%
+  \kern-\py\raise20pt%
+  \hbox{\color{deeppurple}\CNoV\thechapter}\\%
+}
+
+\renewcommand\DOTI[1]{%
+  \nointerlineskip\raggedright%
+  \fboxsep=\myhi%
+  \vskip-1ex%
+  \colorbox{lightpurple}{\parbox[t]{\mylen}{\CTV\FmTi{#1}}}\par\nobreak%
+  \vskip 40pt%
+}
+
+\renewcommand\DOTIS[1]{%
+  \fboxsep=0pt
+  \colorbox{lightpurple}{\rule{0pt}{40pt}\parbox[b]{\textwidth}{\hfill}}\\%
+  \nointerlineskip\raggedright%
+  \fboxsep=\myhi%
+  \colorbox{lightpurple}{\parbox[t]{\mylen}{\CTV\FmTi{#1}}}\par\nobreak%
+  \vskip 40pt%
+ }
 
 
 \begin{document}
