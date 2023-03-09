@@ -1,10 +1,10 @@
-# Trabajo de Fin de Grado: *Título*
+# Trabajo de Fin de Grado: Control de elementos de un automóvil mediante un sistema empotrado
 
 **Este sería el README de tu proyecto. Consulta las [instrucciones de
 instalación](INSTALL.md)
 
-### Autor(a): Nombre
-### Tutor(a)(es): Nombre(s)
+### Autor(a): Sheila Martínez Gómez
+### Tutor(a)(es): Jesús González Peñalver
 ___
 
 La documentación de este proyecto está realizada con `LaTeX`, por lo
