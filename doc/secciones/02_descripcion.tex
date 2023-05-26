@@ -26,18 +26,39 @@ Si la temporización nos lo permite, también se podrán implementar estos siste
 
 
 \section{Restricciones}
-Pasta
-NO podemos abarcar todo en una maqueta etc.
-\section{Objetivos}
-
-
 
 \begin{itemize}
-    \item ¿Qué sistemas se podrían \"emular\" respecto a los vehículos reales, y con qué \textit{hardware}?
-    \item ¿Con qué \textit{hardware} podemos afrontar la gestión, recepción y procesamiento de información de los diversos sistemas?
-    \item ¿Cómo gestionar el \textit{firmware} y el \textit{software} para que realicen las tareas necesarias?
-    \item Tras obtener los datos de estos sistemas, ¿Cómo filtrar la información para mostrarla en una interfaz, y de qué tipo?
+\item Se priorizará el uso de componentes asequibles y con licencia \textit{open source}, para mantener el proyecto accesible al público general.
+\item No se utilizará \textit{hardware} ni \textit{software} que sea profesional en el campo del automovilismo, pues no se dispone de los recursos económicos necesarios para tal fin.
+\item El proyecto tendrá un tiempo acotado, siendo el fin de este periodo la convocatoria ordinaria, situada en Junio de 2023.
+
+
 \end{itemize}
 
-\subsection{Objetivos de Investigación y Aprendizaje}
-\subsection{Objetivos de Diseño y Desarrollo}
+
+\section{Objetivos}
+
+El objetivo general de este trabajo es la creación de un sistema que nos permita emular el funcionamiento de varios de los subsistemas de un vehículo moderno, pero si queremos definir mejor cuáles serán las metas que queremos alcanzar, lo óptimo es segmentar este objetivo en un conjunto de subobjetivos, que dividiremos en dos tipos:
+\newpage
+
+\subsection{Objetivos de Investigación}
+
+\begin{itemize}
+    \item \textbf{O-I.1} - Comprender el funcionamiento de una centralita a nivel básico.
+    \item \textbf{O-I.2} - Sintetizar un conjunto de funciones que podrían ser replicadas en el proyecto.
+    \item \textbf{O-I.3} - Analizar las alternativas a la hora de implementar los diversos módulos.
+    \item \textbf{O-I.4} - Investigar sobre los sistemas de tiempo real y su evolución.
+    \item \textbf{O-I.4} - Entender las directrices del código propietario y buscar alternativas de código libre para implementar el proyecto.
+    \item \textbf{O-I.5} - Investigar acerca de la impresión 3D y encontrar una solución para implementar una figura prediseñada en el trabajo.
+    \item \textbf{O-I.6} - Analizar las licencias que se le podrían atribuir al proyecto y escoger una de estas acorde a las características.
+    \item \textbf{O-I.7} - Conocer el impacto de las ECU en el panorama automovilístico actual. 
+\end{itemize}
+
+\subsection{Objetivos de Diseño}
+\begin{itemize}
+    \item \textbf{O-D.1} - Diseñar personas y casos de uso para encontrar los límites y soluciones de los que precise el proyecto.
+    \item \textbf{O-D.2} - Diseñar un esquemático para representar cómo interactúan los diferentes módulos con la ECU, así como mostrar los datos que se transmitan.
+    \item \textbf{O-D.3} - Programar la ECU para la recepción, tratamiento y envío de datos.
+    \item \textbf{O-D.4} - Implementar una interfaz de usuario para poder mostrar los módulos que buscamos.
+    \item \textbf{O-D.4} - Recrear este sistema en una maqueta de manera física si la temporización lo permitiera.
+\end{itemize}

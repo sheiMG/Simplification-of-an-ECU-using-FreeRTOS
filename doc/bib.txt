@@ -1,0 +1,13 @@
+1. https://ieeexplore.ieee.org/abstract/document/9238205
+2. https://autotechdrive.com/electronic-control-unit/
+3. https://www.ecutesting.com/categories/ecu-explained/
+4. https://www.motortrend.com/how-to/1509-history-of-engine-management-systems/
+5. https://www.actualidadmotor.com/carburador/
+6. https://www.actualidadmotor.com/regulador-de-presion-de-combustible-funcionamiento-y-utilidades/
+7. http://www.blogmecanicos.com/2021/06/el-regulador-de-presion.html
+8. https://www.researchgate.net/figure/ABS-system-basic-scheme_fig1_224323705
+9. https://revista.dgt.es/es/motor/tecnologia-seguridad/2017/0213-Tecnologia-n239-sistema-by-wire.shtml
+10. https://cecas.clemson.edu/cvel//auto/AuE835_Projects_2009/pillai_project.html
+11. https://illumin.usc.edu/automotive-active-safety-systems/
+12. https://www.electronicspecifier.com/products/sensors/active-and-passive-automotive-safety-systems
+13. https://insidegnss.com/adaptive-headlights-now-driven-by-gps/
