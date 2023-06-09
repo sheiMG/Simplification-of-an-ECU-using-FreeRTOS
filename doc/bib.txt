@@ -9,5 +9,13 @@
 9. https://revista.dgt.es/es/motor/tecnologia-seguridad/2017/0213-Tecnologia-n239-sistema-by-wire.shtml
 10. https://cecas.clemson.edu/cvel//auto/AuE835_Projects_2009/pillai_project.html
 11. https://illumin.usc.edu/automotive-active-safety-systems/
-12. https://www.electronicspecifier.com/products/sensors/active-and-passive-automotive-safety-systems
-13. https://insidegnss.com/adaptive-headlights-now-driven-by-gps/
+12. https://www.globalspec.com/learnmore/specialized_industrial_products/transportation_products/automotive_equipment_products/electronic_control_units_ecu
+13. https://www.electronicspecifier.com/products/sensors/active-and-passive-automotive-safety-systems
+14. https://insidegnss.com/adaptive-headlights-now-driven-by-gps/
+15. https://www.volkswagen.co.uk/en/technology/car-safety/driver-alert-system.html
+16. https://www.nissanusa.com/connect/features-apps/automatic-collision-notification.html
+17. https://www.embitel.com/automotive-insights/understanding-body-control-module-the-brain-of-body-electronics-in-automotive
+18. https://www.elprocus.com/different-microcontrollers-used-in-automobiles/
+19. https://www.infineon.com/cms/en/product/microcontroller/32-bit-tricore-microcontroller/
+20. https://ieeexplore.ieee.org/abstract/document/8074444
+21. https://www.ingenieriaymecanicaautomotriz.com/que-es-una-memoria-eeprom-y-como-funciona/
