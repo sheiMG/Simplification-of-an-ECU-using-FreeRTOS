@@ -1,4 +1,4 @@
-\chapter{Estado del arte}
+\chapter{Antecedentes}
 
 
 \section{¿Qué es una ECU?}
@@ -134,10 +134,50 @@ En una ECU, normalmente existen tres tipos de memoria, \textbf{ROM}, \textbf{RAM
     \end{itemize}
 \end{itemize}
 
-\subsection{Sensores}
+\newpage
+\subsection{Sensores y actuadores}
 
-Los sensores tienen un papel esencial en el diseño hardware de las ECU, dando información de los sistemas del vehículo al microcontrolador para su monitorización. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\textwidth]{imagenes/diagrama_sensor_actuador.png}
+    \caption{Representación de sensores y actuadores. Elaboración propia}
+\end{figure}
 
+\subsubsection*{Sensores}
+
+Los sensores tienen un papel esencial en el diseño hardware de las ECU, siendo los que proveen al microcontrolador de entradas para llevar a cabo operaciones y hacer funcionar el sistema. Normalmente un sensor de un vehículo da una medida de voltaje, que es representada por un código en el procesador. Si este voltaje es incorrecto, el micro lo tomará como una entrada inválida y dará un código de error. 
+
+Existen decenas de sensores en un vehículo, pero aquí se van a citar algunos de los más relevantes [22]:
+
+
+\begin{itemize}
+    \item \textbf{Sensor Lambda: }También conocido como el sensor de oxígeno. Se encarga de medir la cantidad de oxígeno en los gases del escape para comprobar si las emisiones del vehículo están acorde al protocolo. 
+    \item \textbf{Sensor de posición del acelerador (\textit{throttle})}: Este sensor permite determinar la posición del pedal del acelerador. Si está más presionado en vehículos de combustión, enviará más aire y combustible al motor. En el caso de los eléctricos, se enviará una señal para que se aumente el voltaje.
+    \item \textbf{Sensor de líquido refrigerante: }El nombre es explicativo. Otorga los datos a la ECU para controlar si el nivel está bajo y necesita encenderse un testigo para comunicárselo al conductor.
+    \item \textbf{Sensor de presión de los neumáticos}: Si bien no es algo común, el uso de estos sensores de presión en los tapones para las ruedas permite dar información al sistema sobre si la presión es correcta o existe alguna anomalía.
+\end{itemize}
+
+\subsubsection*{Actuadores}
+
+Un actuador es un dispositivo eléctrico o mecánico que, al recibir una señal eléctrica enviada por el microcontrolador, la convierte a una acción mecánica. Son la contraparte directa de los sensores. Su funcionamiento depende del tipo de actuador y la energía que requiera, pero los pasos generales del proceso son los siguientes:
+
+\begin{enumerate}
+    \item 1. \textbf{Recepción de señal:} En primer lugar la ECU envía una señal al actuador, indicándole cuál es la acción que debe realizar. 
+    \item 2. \textbf{Conversión señal-energía:} El actuador convierte la señal recibida al valor equivalente en la energía que precise, ya sea mecánica, neumática o hidráulica. 
+    \item 3. \textbf{Activación:} El actuador realiza la acción acorde a los valores que ha recibido de la ECU, siendo algunos casos, por ejemplo, la activación del motor que baja las ventanas, el encendido de las luces de largo alcance, o cualquier otro mecanismo. 
+    \item 4. \textbf{Feedback:} Mayormente en los casos más sensibles, el actuador envía a la ECU una señal indicando que su tarea ha sido realizada.
+\end{enumerate}
+
+\subsection{Interfaces de comunicación}
+Con el aumento de sensores, actuadores y subsistemas en los vehículos, se ha hecho imperativo tener interconexión entre todas estas partes. En algunos casos, una conexión lenta o ineficiente puede conllevar un grave peligro, incluso vidas en riesgo. 
+
+Para poder subsanar este problema se han desarrollado varios tipos de interfaces de comunicación, que permiten transmitir los datos de un subsistema al microcontrolador, o a otro subsistema. Dependiendo del contexto en el que se utilice, existen varios tipos de interfaces:
+
+\begin{itemize}
+    \item \textbf{CAN} \textit({Controller Area Network}): Sistema de buses de alta integridad para la interconexión de dispositivos inteligentes[23].  Está ampliamente extendida en la automoción, y funciona mediante una tecnología \textit{peer-to-peer} en la que no existe un maestro que controle el resto de nodos. Cada nodo CAN, una vez está listo para transmitir, comprueba si el bus está libre y escribe en la red. Tiene un sistema de prioridades dependiendo del nodo que envíe o reciba la señal. 
+    \item \textbf{LIN} \textit({Local Interface Network}): Subsistema de la línea CAN. Se encarga de liberar la carga del bus que se genera al tener que supervisar la línea. Permite reducir costes y optimizar la comunicación.
+    \item \textbf{FlexRay}: Esta interfaz actúa entre ECUs, y está destinada a aplicaciones críticas, como la ya nombrada anteriormente \textit{drive-by-wire}. Posee una alta transmisión de datos, redundacia y tolerancia de errores. Fue lanzada en 2007 en un BMW X5, y supuso un gran avance en la seguridad de los vehículos.
+\end{itemize}
 
 \section{La ECU en los vehículos: El mejor amigo del conductor}
 
@@ -151,8 +191,6 @@ Muchos de estos sistemas no solamente inciden en la eficiencia y comodidad, sino
     \item \textbf{Seguridad activa} - Conjunto de medidas que proporcionan mayor estabilidad al vehículo, buscando evitar el accidente a priori.
     \begin{itemize}
         \item \textit{Luces adaptativas}: Esta tecnología se basa en el uso de una matriz de LEDs en las luces delanteras, al contrario de la tradicional bombilla incandescente usada anteriormente. Los beneficios de este diseño son múltiples, pues permite modificar el haz de luz para evitar posibles deslumbramientos a otros usuarios de la vía, así como también adaptarse a las condiciones de la carretera, e iluminar más eficazmente el trazado.
-
-
      
         \item \textit{Control de crucero adaptativo (ACC)}: Permite mantener una velocidad designada por el conductor, variando cuando sea necesario por las condiciones del tráfico. Esta tecnología supone una gran ayuda en el caso de que exista una distracción del conductor. Puede funcionar junto a un sistema de detección de señales para no sobrepasar la velocidad máxima permitida en esa vía.
     
@@ -182,21 +220,10 @@ Muchos de estos sistemas no solamente inciden en la eficiencia y comodidad, sino
 
 \section{La necesidad de un RTOS en las ECUs}
 
-2.2.2 Real-Time Operating System
-The general structure of a more recent (but not fully modern) ECU follows a model
-similar to the main loops outlined in 2.2.1, but these loops are often distributed across
-multiple cores with a more complex scheduling system. This requires the use of a realtime-operating-system (RTOS) to schedule, manage, and distribute the cores of the CPU so
-that each function can execute on-time. This allows for important sensor reading functions,
-health checking functions, and fuel injection functions to be ran concurrently, increasing
-their speed and response time and greatly increasing their safety and optimizing their performance. Several contemporary open-source ECUs are implemented on top of an RTOS
-to schedule necessary tasks, with a notable one being rusEfi which was built on top of the
-open-source platform FreeRTOS[5]
+Como se ha mencionado en los apartados anteriores, los vehículos actuales poseen una gran multitud de sistemas y subsistemas que deben trabajar simultáneamente, teniendo unos márgenes temporales muy escasos y, en algunas situaciones, críticos para el funcionamiento del automóvil. 
 
-\section{Futuras tendencias en el campo de las ECU: ¿Qué podemos esperar?}
+Un sistema operativo que no fuera un RTOS podría causar desincronizaciones, respuestas demasiado lentas, y generar situaciones de peligro. 
 
-\section{Código Abierto, Software Libre y Licencias}
+Los RTOS permiten planificar, controlar y distribuir los núcleos de la CPU, para que todas esas funciones se realicen simultáneamente y en el tiempo de respuesta acotado, debido a su comportamiento determinista y predectible. 
 
-El software libre y sus licencias \cite{gplv3} ha permitido llevar a cabo una expansión del
-aprendizaje de la informática sin precedentes.
-
-\section{Conclusiones}
+Además, el uso de este tipo de SOs permite aislar los errores y prevenir que se extiendan al conjunto del vehículo, pues la planificación de los núcleos hace que sea posible mantener una tarea que monitorice los errores de manera continua y minimice el impacto de estos.

@@ -19,3 +19,5 @@
 19. https://www.infineon.com/cms/en/product/microcontroller/32-bit-tricore-microcontroller/
 20. https://ieeexplore.ieee.org/abstract/document/8074444
 21. https://www.ingenieriaymecanicaautomotriz.com/que-es-una-memoria-eeprom-y-como-funciona/
+22. https://www.actronics.co.uk/news/how-does-a-ecu-work-in-a-car
+23. https://www.ni.com/es-es/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/controller-area-network--can--overview.html
