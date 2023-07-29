@@ -143,22 +143,21 @@ void setup(){
     .setLabel("TM")
     ;
     
-/*
   cp5.addButton("TEMPBATERIA")
     .setPosition (610, y-350)
     .setSize(70,70)
     .setFont(font)
     .setLabel("TB")
     ;
-  */  
+ 
     
 
-  motorTempKnob = cp5.addKnob("TEMPMOTORVIEW",0,90,690,50,220); // (valormin,valormax,posx,posy,radio);
+  motorTempKnob = cp5.addKnob("TEMPMOTORVIEW",0,60,690,50,220); // (valormin,valormax,posx,posy,radio);
   motorTempKnob.setOffsetAngle(PI - HALF_PI/2);
   motorTempKnob.setValue(+motorTempKnob.value());
   motorTempKnob.setCaptionLabel("");
 
-  batteryTempKnob = cp5.addKnob("TEMPMBATTERYVIEW",0,90,1000,50,220); // (valormin,valormax,posx,posy,radio);
+  batteryTempKnob = cp5.addKnob("TEMPBATTERYVIEW",0,60,1000,50,220); // (valormin,valormax,posx,posy,radio);
   batteryTempKnob.setOffsetAngle(PI - HALF_PI/2);
   //batteryTempKnob.setValue(+batteryTempKnob.value());
   batteryTempKnob.setCaptionLabel("");
@@ -233,13 +232,16 @@ text("xh y xm", 240,610);
   fill(92,108,124);
   rect(x-620,10, 610, 330);
 
-  Controller c = cp5.getController("TEMPMOTORVIEW");
-  color g1 = lerpColor(to, from, c.getValue()/(60-c.getMin()));
-  c.setColorActive(g1);
-  c.setColorForeground(g1);
+  Controller cMotor = cp5.getController("TEMPMOTORVIEW");
+  Controller cBattery = cp5.getController("TEMPBATTERYVIEW");
 
-
-
+  color g1 = lerpColor(to, from, cMotor.getValue()/(60-cMotor.getMin()));
+  color g2 = lerpColor(to, from, cBattery.getValue()/(60-cBattery.getMin()));
+  cMotor.setColorActive(g1);
+  cMotor.setColorForeground(g1);
+  
+  cBattery.setColorActive(g1);
+  cBattery.setColorForeground(g1);
 
 
 
@@ -254,8 +256,10 @@ if(port.available()>0)
     if(tempRealMotor.length() > 5)
       tempRealMotor = tempRealMotor.substring(0, 5);
    }
-    text(tempRealMotor, x-600, 30);
-    motorTempKnob.setValue(Float.parseFloat(tempRealMotor));    
+    if(tempRealMotor != null){
+    text(tempRealMotor, x-600, 30);      
+      motorTempKnob.setValue(Float.parseFloat(tempRealMotor));   
+    }
 }
 
 if(port.available()>0)
@@ -266,8 +270,10 @@ if(port.available()>0)
     if(tempRealBattery.length() > 5)
       tempRealBattery = tempRealBattery.substring(0, 5);
    }
-    text(tempRealMotor, x-600, 30);
-    motorTempKnob.setValue(Float.parseFloat(tempRealMotor));    
+    if(tempRealBattery != null){ 
+      text(tempRealBattery, x-300, 30);
+      batteryTempKnob.setValue(Float.parseFloat(tempRealBattery));   
+    }
 }
   
 //PANEL DE MOTOR
@@ -334,8 +340,10 @@ image(carRender, 1330, 90);
   }  
   
   if (lightTurnRStatus > 0 && lightEmerStatus == 0){
+    if(frameCount%12 == 0){
     image(light_turn, 1540, 111);
     image(light_turn, 1545, 550);  
+    }
 
   }
   
@@ -404,6 +412,12 @@ void LUZNEUTRAL()
 void TEMPMOTOR()
 {
   port.write('m');
+}
+
+
+void TEMPBATERIA()
+{
+  port.write('q');
 }
 
 
