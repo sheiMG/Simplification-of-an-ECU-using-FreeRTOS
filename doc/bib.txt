@@ -21,3 +21,7 @@
 21. https://www.ingenieriaymecanicaautomotriz.com/que-es-una-memoria-eeprom-y-como-funciona/
 22. https://www.actronics.co.uk/news/how-does-a-ecu-work-in-a-car
 23. https://www.ni.com/es-es/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/controller-area-network--can--overview.html
+24. https://www.freertos.org/
+25. https://www.freertos.org/a00090.html
+26. https://store.arduino.cc/products/arduino-mega-2560-rev3
+27. https://www.openimpulse.com/blog/products-page/product-category/l293d-motor-driver-shield-arduino/
