@@ -1,23 +1,25 @@
 \chapter{Antecedentes}
 
+\fancyhead[R]{3. Antecedentes}
+
+\noindent\fbox{
+	\parbox{\textwidth}{
+    En este capítulo se tratará el problema que se va a intentar abordar en este trabajo, junto con una descripción del mismo, y los objetivos y restricciones para su solución.
+	}
+}
 
 \section{¿Qué es una ECU?}
 
 
-Una ECU \textit{Electronic Control Unit} es un sistema empotrado, que consta de un microcontrolador especializado en la automoción. [1] (embitel.com) Permite, junto con el software y los protocolos de comunicación, y el conjunto de sensores y actuadores, controlar los sistemas eléctricos y subsistemas en un vehículo para su correcto funcionamiento. 
+Una ECU \textit{Electronic Control Unit} es un sistema empotrado, que consta de un microcontrolador especializado en la automoción. \cite{ecutesting_ecu} Permite, junto con el software y los protocolos de comunicación, y el conjunto de sensores y actuadores, controlar los sistemas eléctricos y subsistemas en un vehículo para su correcto funcionamiento. 
 Esencialmente se encarga de recibir la información que le aportan los sensores acerca del entorno, procesar esa información para completar diversas tareas y, en muchos casos, enviar las directrices que se requieren a los actuadores de los componentes.\newline
 
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{imagenes/ECU_autotechdrive.png}
-    \caption{Imagen de una ECU y su impacto en un vehículo. Extraído de: []}
-\end{figure}
 
 
 \subsection{Evolución e historia de la gestión de datos los vehículos}
 
-Las siglas ECU no siempre han tenido el mismo significado. Inicialmente, cuando se comenzaron a utilizar (en torno a los años setenta), era para hablar de la unidad de control del motor \textit{\textbf{Engine Control Unit}}. Podemos desgajar los grandes cambios en lo siguiente[4]:
+Las siglas ECU no siempre han tenido el mismo significado. Inicialmente, cuando se comenzaron a utilizar (en torno a los años setenta), era para hablar de la unidad de control del motor \textit{\textbf{Engine Control Unit}}. Podemos desgajar los grandes cambios en las siguientes etapas \cite{motortrend_ecu}:
 
 \begin{itemize}
 
@@ -26,34 +28,34 @@ Las siglas ECU no siempre han tenido el mismo significado. Inicialmente, cuando 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.5\textwidth]{imagenes/esquema_carburador.png}
-        \caption{Imagen simplificada de un carburador sus partes. Extraído de: [5]}
+        \caption{Imagen simplificada de un carburador sus partes. Extraído de: \cite{carburador}}
     \end{figure}
  
-    \item \textbf{Años 80} - En esta época se comenzaron a utilizar los \textbf{reguladores de presión de combustible}, un componente que busca controlar y mantener constante la presión del combustible. Permitió a los fabricantes de vehículos tener mayor control a la hora de no dañar otros componentes, tales como inyectores o los conductos del sistema en general [5]. En este punto, la unidad de control del motor ya era la principal responsable de los sistemas de combustión. También comenzaron a utilizar el \textbf{Control de Lambda} para modificar parámetros de la misma, y alcanzar una mayor eficiencia.
+    \item \textbf{Años 80} - En esta época se comenzaron a utilizar los \textbf{reguladores de presión de combustible}, un componente que busca controlar y mantener constante la presión del combustible. Permitió a los fabricantes de vehículos tener mayor control a la hora de no dañar otros componentes, tales como inyectores o los conductos del sistema en general \cite{regulador}. En este punto, la unidad de control del motor ya era la principal responsable de los sistemas de combustión. También comenzaron a utilizar el \textbf{Control de Lambda}, una tecnología que medía composición del humo del escape, para modificar parámetros de la mezcla aire-combustible, y alcanzar una mayor eficiencia.
 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.6\textwidth]{imagenes/esquema_rpc.png}
-        \caption{Imagen simplificada de un regulador de combustible y sus partes. Extraído de: [7]}
+        \caption{Imagen simplificada de un regulador de combustible y sus partes. Extraído de: \cite{regulador_img}}
     \end{figure}
 
 
-    \item \textbf{Años 90} - Las ECUs añadieron un conjunto de medidas para mejorar la seguridad en el vehículo, siendo el \textbf{ABS ó Antiblockiersystem} la más relevante. Esta tecnología, aún en uso en los vehículos actuales, se encarga de variar la fuerza de frenado al detectar mediante sensores de revoluciones en las ruedas, evitando así que estas se bloqueen y perdamos el control del vehículo. El uso de las ECUs se extiende hacia los motores diésel, teniendo un papel esencial en el desarrollo de los vehículos turbodiésel.
+    \item \textbf{Años 90} - Las ECUs añadieron un conjunto de medidas para mejorar la seguridad en el vehículo, siendo el \textbf{ABS ó Antiblockiersystem} la más relevante. Esta tecnología, aún en uso en los vehículos actuales, se encarga de variar la fuerza de frenado al detectar variaciones de revoluciones mediante sensores en las ruedas, evitando así que estas se bloqueen y perdamos el control del vehículo. El uso de las ECUs se extiende hacia los motores diésel, teniendo un papel esencial en el desarrollo de los vehículos turbodiésel.
 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.5\textwidth]{imagenes/esquema_abs.png}
-        \caption{Imagen simplificada del ABS y sus partes. Extraído de: [8]}
+        \caption{Imagen simplificada del ABS y sus partes. Extraído de: \cite{abs}}
     \end{figure}
     
  
-    \item \textbf{Años 2000} - Las unidades de control comienzan a incluir la tecnología \textit{\textbf{drive-by-wire}}, un formalismo para definir la sustitución de controles mecánicos tradicionales por sistemas electrónicos [9], así como también se añade control del turbo y sistemas para minimizar emisiones y cumplir con los protocolos pertinentes.
+    \item \textbf{Años 2000} - Las unidades de control comienzan a incluir la tecnología \textit{\textbf{drive-by-wire}}, un formalismo para definir la sustitución de controles mecánicos tradicionales por sistemas electrónicos \cite{drive_by_wire}, así como también se añade control del turbo y sistemas para minimizar emisiones y cumplir con los protocolos pertinentes.
        
 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.5\textwidth]{imagenes/esquema_dbw.png}
-        \caption{Conceptualización del sistema \textit{drive-by-wire}. Extraído de: [10]}
+        \caption{Conceptualización del sistema \textit{drive-by-wire}. Extraído de: \cite{dbw_img}}
     \end{figure}
           
 
@@ -63,7 +65,7 @@ Las siglas ECU no siempre han tenido el mismo significado. Inicialmente, cuando 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.5\textwidth]{imagenes/ECU_autotechdrive_completa.png}
-        \caption{Representación de las distintas ECUs que controlan un vehículo. Extraído de: [11]}
+        \caption{Representación de las distintas ECUs que controlan un vehículo. Extraído de: \cite{autotechdrive}}
     \end{figure}
 \end{itemize}
 
@@ -80,14 +82,14 @@ Las siglas ECU no siempre han tenido el mismo significado. Inicialmente, cuando 
 
 
 \subsection{Tipos de ECUs}
-Como se ha visto en el anterior apartado, el significado de las siglas ECU ha variado con el tiempo, refiriéndose ahora a cada uno de los sistemas que controlan diversas partes del vehículo. A grandes rasgos, podemos hablar de los siguientes tipos[12]
+Como se ha visto en el anterior apartado, el significado de las siglas ECU ha variado con el tiempo, refiriéndose ahora a cada uno de los sistemas que controlan diversas partes del vehículo. A grandes rasgos, podemos hablar de los siguientes tipos\cite{ecu_tipos}
 \begin{itemize}
-    \item \textbf{BCM - \textit{Body Control Module}}: Esta unidad controla tareas de índole variada, desde las luces, hasta el mecanismo de las ventanas, los retrovisores (si son motorizados), limpiaparabrisas, etc.
+    \item \textbf{BCM - \textit{Body Control Module}}: Esta unidad controla tareas de índole variada, desde las luces, hasta el mecanismo de las ventanas, los retrovisores (si son motorizados), limpiaparabrisas, etc. \cite{bcm}
     \item \textbf{CCM - \textit{Climate Control Module}}: Este módulo se encarga de gestionar toda la climatización, temperatura, potencia de la bomba del aire acondicionado y calefacción.
     \item \textbf{ECM - \textit{Engine Control Module}}: Conocido antiguamente como ECU. Se encarga de gestionar todas las tareas del motor, ya mencionadas en el apartado anterior.
     \item \textbf{EBCM - \textit{Electronic Brake Control Module}}: Si el vehículo tiene un freno electrónico, este módulo es el encargado de su correcto funcionamiento.
     \item \textbf{ICM - \textit{Infotainment Control Module}}: Esta ECU controla todo lo relacionado con el infoentretenimiento, mayormente centrado en la tableta integrada del vehículo.
-    \item \textbf{PSM - \textit{Power Steering Module}}: Este módulo gestiona las tareas que requiere la dirección para funcionar. Tiene una gran importancia, debido al uso de la dirección asistida en los vehículos actuales.
+    \item \textbf{PSM - \textit{Power Steering Module}}: Este módulo gestiona las tareas que requieren de la dirección para funcionar. Tiene una gran importancia, debido al uso de la dirección asistida en los vehículos actuales.
     \item \textbf{PCM - \textit{Powertrain Control Module}}: Esta ECU se encarga de la interconexión e interacción de los componentes que forman el \textbf{tren motriz}, el sistema que permite que la energía generada se transforme en movimiento sobre el terreno. Gestiona lo relacionado con el motor, la transmisión, los ejes, los diferenciales y la dirección del vehículo. 
     \item \textbf{SCM - \textit{Suspension Control Module}}: El objetivo de este módulo es controlar los sistemas de suspensión del vehículo.
     \item \textbf{TCM - \textit{Transmission Control Module}}: Este módulo controla todo lo relacionado con la transmisión, las marchas, el cambio y la entrega de potencia en las ruedas.
@@ -108,13 +110,13 @@ El microcontrolador es la piedra angular de una centralita. Su tarea varía seg�
 Estos microcontroladores pueden interaccionar entre sí, aun perteneciendo a diferentes centralitas, por medio de \textbf{multiplexación}, así como también de los buses o protocolos de comunicación. Esta relación permite a un sistema valerse de otros para realizar una tarea, véase el siguiente ejemplo: 
 
 \begin{enumerate}
-    \item El usuario nota que hace demasiado calor en el vehículo, por lo que decide cambiar la temperatura en la tableta central del vehículo.
+    \item El usuario siente que hace demasiado calor en el vehículo, por lo que decide cambiar la temperatura en la tableta central del vehículo.
     \item Este sistema, controlado por el \textbf{ICM} (\textit{Infotainment Control Module}), recibe la entrada del usuario y envía una señal a la ECU que se encarga de la climatización (\textbf{CCM}).
     \item El módulo de climatización recibe la entrada y envía una señal a sus actuadores para encender el aire acondicionado.
 \end{enumerate}
 
 
-Respecto a la arquitectura del microcontrolador, existen diversas opciones, todas (o casi todas) ellas oscilando entre los 8 bits y los 32 bits, siendo estos últimos los más extendidos con el \textbf{Infineon Tri-core Microcontroller[19]}. Este micro se encarga de gestionar todas las tareas de emisiones y sistemas de combustión. 
+Respecto a la arquitectura del microcontrolador existen diversas opciones, todas (o casi todas) ellas oscilando entre los 8 bits y los 32 bits\cite{micros}, siendo estos últimos los más extendidos con el \textbf{Infineon Tri-core Microcontroller\cite{infineon}}. Este micro se encarga de gestionar todas las tareas de emisiones y sistemas de combustión. 
 
 La elección entre un chip u otro también se hace en base a las necesidades del sistema, puesto que algunos, como el tren de potencia y el control del vehículo requieren de un menor tiempo de respuesta y un mayor rendimiento, mientras que el infoentretenimiento no tiene tanta restricción al ser un \textbf{sistema de tiempo real blando} (incumplir el límite acotado del tiempo de respuesta no ocasiona daños personales o materiales)
 
@@ -123,10 +125,10 @@ La elección entre un chip u otro también se hace en base a las necesidades del
 En una ECU, normalmente existen tres tipos de memoria, \textbf{ROM}, \textbf{RAM} y \textbf{PROM/EEPROM}. Cada una tiene un objetivo específico y unas restricciones asociadas:
 
 \begin{itemize}
-    \item \textbf{Memoria no volátil}: La ECU almacena en este tipo de memoria información que no se debe borrar una vez se apague el vehículo, como los datos del sistema y los del usuario (configuraciones, perfiles de conducción, etcétera.).
+    \item \textbf{Memoria no volátil}: La ECU almacena en este tipo de memoria información que no se debe borrar una vez se apague el vehículo, como los datos del sistema y los del usuario (configuraciones, perfiles de conducción, etcétera.).\cite{ram_nvm}
     \begin{itemize}
         \item \textbf{ROM}: Almacena información de programación que solo puede leer la ECU. Es de solo lectura, y su existencia es de vital importancia para el funcionamiento del vehículo.
-        \item \textbf{PROM/EEPROM}: Este tipo de memoria está hecha por el fabricante, con el objetivo de ajustarse a la aplicación de la transmisión, motor y demás piezas fundamentales del vehículo. Mientras que la PROM no se puede reprogramar, la EEPROM (\textit{Electrically Erasable Programmable Read-Only Memory}) permite al usuario o al operario reprogramarla con un dispositivo especial. 
+        \item \textbf{PROM/EEPROM}: Este tipo de memoria está hecha por el fabricante, con el objetivo de ajustarse a la aplicación de la transmisión, motor y demás piezas fundamentales del vehículo. \cite{eeprom}. Mientras que la PROM no se puede reprogramar, la EEPROM (\textit{Electrically Erasable Programmable Read-Only Memory}) permite al usuario o al operario reprogramarla con un dispositivo especial. 
     \end{itemize}
     \item \textbf{Memoria volátil}: La ECU utiliza esta memoria para almacenar datos temporales, no mantiene la información entre reinicios.
     \begin{itemize}
@@ -143,11 +145,11 @@ En una ECU, normalmente existen tres tipos de memoria, \textbf{ROM}, \textbf{RAM
     \caption{Representación de sensores y actuadores. Elaboración propia}
 \end{figure}
 
-\subsubsection*{Sensores}
+\subsubsection{Sensores}
 
 Los sensores tienen un papel esencial en el diseño hardware de las ECU, siendo los que proveen al microcontrolador de entradas para llevar a cabo operaciones y hacer funcionar el sistema. Normalmente un sensor de un vehículo da una medida de voltaje, que es representada por un código en el procesador. Si este voltaje es incorrecto, el micro lo tomará como una entrada inválida y dará un código de error. 
 
-Existen decenas de sensores en un vehículo, pero aquí se van a citar algunos de los más relevantes [22]:
+Existen decenas de sensores en un vehículo, pero aquí se van a citar algunos de los más relevantes \cite{ecu_sensores}:
 
 
 \begin{itemize}
@@ -157,7 +159,7 @@ Existen decenas de sensores en un vehículo, pero aquí se van a citar algunos d
     \item \textbf{Sensor de presión de los neumáticos}: Si bien no es algo común, el uso de estos sensores de presión en los tapones para las ruedas permite dar información al sistema sobre si la presión es correcta o existe alguna anomalía.
 \end{itemize}
 
-\subsubsection*{Actuadores}
+\subsubsection{Actuadores}
 
 Un actuador es un dispositivo eléctrico o mecánico que, al recibir una señal eléctrica enviada por el microcontrolador, la convierte a una acción mecánica. Son la contraparte directa de los sensores. Su funcionamiento depende del tipo de actuador y la energía que requiera, pero los pasos generales del proceso son los siguientes:
 
@@ -169,12 +171,12 @@ Un actuador es un dispositivo eléctrico o mecánico que, al recibir una señal 
 \end{enumerate}
 
 \subsection{Interfaces de comunicación}
-Con el aumento de sensores, actuadores y subsistemas en los vehículos, se ha hecho imperativo tener interconexión entre todas estas partes. En algunos casos, una conexión lenta o ineficiente puede conllevar un grave peligro, incluso vidas en riesgo. 
+Con el aumento de sensores, actuadores y subsistemas en los vehículos, se ha hecho imperativo tener interconexión entre todas estas partes. En algunos casos, una conexión lenta o ineficiente puede conllevar un grave peligro, incluso poner vidas en riesgo. 
 
 Para poder subsanar este problema se han desarrollado varios tipos de interfaces de comunicación, que permiten transmitir los datos de un subsistema al microcontrolador, o a otro subsistema. Dependiendo del contexto en el que se utilice, existen varios tipos de interfaces:
 
 \begin{itemize}
-    \item \textbf{CAN} \textit({Controller Area Network}): Sistema de buses de alta integridad para la interconexión de dispositivos inteligentes[23].  Está ampliamente extendida en la automoción, y funciona mediante una tecnología \textit{peer-to-peer} en la que no existe un maestro que controle el resto de nodos. Cada nodo CAN, una vez está listo para transmitir, comprueba si el bus está libre y escribe en la red. Tiene un sistema de prioridades dependiendo del nodo que envíe o reciba la señal. 
+    \item \textbf{CAN} \textit({Controller Area Network}): Sistema de buses de alta integridad para la interconexión de dispositivos inteligentes \cite{can}.  Está ampliamente extendida en la automoción, y funciona mediante una tecnología \textit{peer-to-peer} en la que no existe un maestro que controle el resto de nodos. Cada nodo CAN, una vez está listo para transmitir, comprueba si el bus está libre y escribe en la red. Tiene un sistema de prioridades dependiendo del nodo que envíe o reciba la señal. 
     \item \textbf{LIN} \textit({Local Interface Network}): Subsistema de la línea CAN. Se encarga de liberar la carga del bus que se genera al tener que supervisar la línea. Permite reducir costes y optimizar la comunicación.
     \item \textbf{FlexRay}: Esta interfaz actúa entre ECUs, y está destinada a aplicaciones críticas, como la ya nombrada anteriormente \textit{drive-by-wire}. Posee una alta transmisión de datos, redundacia y tolerancia de errores. Fue lanzada en 2007 en un BMW X5, y supuso un gran avance en la seguridad de los vehículos.
 \end{itemize}
@@ -185,7 +187,7 @@ El ser humano ha hecho grandes avances en la tecnología, y esto no podría ser 
 
 Gracias a estos sistemas, podemos obtener desde una mayor eficiencia en el uso de la fuente de energía (ya sea combustible fósil o electricidad), un control más específico de los mapas motor para mayor potencia, recolección de datos relevantes del vehículo, e incluso algunas mejoras \textit{Quality of Life (QoL)} que nos permitan una conducción más cómoda. 
 
-Muchos de estos sistemas no solamente inciden en la eficiencia y comodidad, sino también en la seguridad del conductor y de los pasajeros abordo. Algunas de las medidas más relevantes, que vamos a categorizar entre activas y pasivas, son las siguientes[11]:
+Muchos de estos sistemas no solamente inciden en la eficiencia y comodidad, sino también en la seguridad del conductor y de los pasajeros abordo. Algunas de las medidas más relevantes, que vamos a categorizar entre activas y pasivas, son las siguientes\cite{safety_systems}:
 
 \begin{enumerate}
     \item \textbf{Seguridad activa} - Conjunto de medidas que proporcionan mayor estabilidad al vehículo, buscando evitar el accidente a priori.
@@ -196,13 +198,13 @@ Muchos de estos sistemas no solamente inciden en la eficiencia y comodidad, sino
     
         \item \textit{Sistema de alerta de tráfico y evasión de colisión (TCAS)}: Este sistema tiene como tarea principal la detección de eventos en el tráfico que puedan causar un accidente, reaccionando (normalmente accionando de manera automática el freno), o advirtiendo al conductor para que sea él el que realice la acción pertinente para evitarlo.
 
-        \item \textit{Sistema de detección de cansancio}: Algunos fabricantes [14] comienzan a implementar esta tecnología que, mediante sensores en la posición del conductor, o analizando su conducción, permite detectar si existen síntomas de cansancio o distracción. Normalmente muestran un aviso que se repite de manera continuada hasta que se realiza una parada. 
+        \item \textit{Sistema de detección de cansancio}: Algunos fabricantes \cite{volkswagen} comienzan a implementar esta tecnología que, mediante sensores en la posición del conductor, o analizando su conducción, permite detectar si existen síntomas de cansancio o distracción. Normalmente muestran un aviso que se repite de manera continuada hasta que se realiza una parada. 
 \end{itemize}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{imagenes/adaptive_lights.png}
-    \caption{Comparación de la iluminación en los vehículos tras los años. Extraído de: [14]}
+    \caption{Comparación de la iluminación en los vehículos tras los años. Extraído de: \cite{luces_adaptativas}}
 \end{figure}
 
 
@@ -211,7 +213,7 @@ Muchos de estos sistemas no solamente inciden en la eficiencia y comodidad, sino
     \begin{itemize}
         \item \textit{Sistema de sensor de ocupación}: Permite detectar qué asientos están siendo utilizados, y comprobar el peso para saber si el ocupante es un niño o un adulto. Normalmente se utiliza para accionar el airbag si fuera necesario, y la altura a la que hacerlo.
 
-        \item \textit{Notificación de colisión automática}: Este sistema envía un aviso a los servicios de emergencia de su localicación para que sea posible una intervención rápida.[16]
+        \item \textit{Notificación de colisión automática}: Este sistema envía un aviso a los servicios de emergencia de su localicación para que sea posible una intervención rápida. \cite{colision}
     \end{itemize}
 \end{enumerate}
 

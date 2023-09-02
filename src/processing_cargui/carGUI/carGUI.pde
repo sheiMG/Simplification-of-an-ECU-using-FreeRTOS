@@ -299,7 +299,6 @@ void setup() {
 
   batteryTempKnob = cp5.addKnob("TEMPBATTERYVIEW", 0, 60, 580, 400, 260);  // (valormin,valormax,posx,posy,radio);
   batteryTempKnob.setOffsetAngle(PI - HALF_PI / 2);
-  //batteryTempKnob.setValue(+batteryTempKnob.value());
   batteryTempKnob.setCaptionLabel("");
 }
 

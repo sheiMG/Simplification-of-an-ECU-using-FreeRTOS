@@ -1,27 +1,31 @@
 1. https://ieeexplore.ieee.org/abstract/document/9238205
-2. https://autotechdrive.com/electronic-control-unit/
-3. https://www.ecutesting.com/categories/ecu-explained/
-4. https://www.motortrend.com/how-to/1509-history-of-engine-management-systems/
-5. https://www.actualidadmotor.com/carburador/
-6. https://www.actualidadmotor.com/regulador-de-presion-de-combustible-funcionamiento-y-utilidades/
-7. http://www.blogmecanicos.com/2021/06/el-regulador-de-presion.html
-8. https://www.researchgate.net/figure/ABS-system-basic-scheme_fig1_224323705
-9. https://revista.dgt.es/es/motor/tecnologia-seguridad/2017/0213-Tecnologia-n239-sistema-by-wire.shtml
-10. https://cecas.clemson.edu/cvel//auto/AuE835_Projects_2009/pillai_project.html
-11. https://illumin.usc.edu/automotive-active-safety-systems/
-12. https://www.globalspec.com/learnmore/specialized_industrial_products/transportation_products/automotive_equipment_products/electronic_control_units_ecu
-13. https://www.electronicspecifier.com/products/sensors/active-and-passive-automotive-safety-systems
-14. https://insidegnss.com/adaptive-headlights-now-driven-by-gps/
-15. https://www.volkswagen.co.uk/en/technology/car-safety/driver-alert-system.html
-16. https://www.nissanusa.com/connect/features-apps/automatic-collision-notification.html
-17. https://www.embitel.com/automotive-insights/understanding-body-control-module-the-brain-of-body-electronics-in-automotive
-18. https://www.elprocus.com/different-microcontrollers-used-in-automobiles/
-19. https://www.infineon.com/cms/en/product/microcontroller/32-bit-tricore-microcontroller/
-20. https://ieeexplore.ieee.org/abstract/document/8074444
-21. https://www.ingenieriaymecanicaautomotriz.com/que-es-una-memoria-eeprom-y-como-funciona/
-22. https://www.actronics.co.uk/news/how-does-a-ecu-work-in-a-car
-23. https://www.ni.com/es-es/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/controller-area-network--can--overview.html
-24. https://www.freertos.org/
-25. https://www.freertos.org/a00090.html
-26. https://store.arduino.cc/products/arduino-mega-2560-rev3
-27. https://www.openimpulse.com/blog/products-page/product-category/l293d-motor-driver-shield-arduino/
+ https://autotechdrive.com/electronic-control-unit/
+ https://www.ecutesting.com/categories/ecu-explained/
+ https://www.motortrend.com/how-to/1509-history-of-engine-management-systems/
+https://www.actualidadmotor.com/carburador/
+ https://www.actualidadmotor.com/regulador-de-presion-de-combustible-funcionamiento-y-utilidades/
+ http://www.blogmecanicos.com/2021/06/el-regulador-de-presion.html
+ https://www.researchgate.net/figure/ABS-system-basic-scheme_fig1_224323705
+https://revista.dgt.es/es/motor/tecnologia-seguridad/2017/0213-Tecnologia-n239-sistema-by-wire.shtml
+. https://cecas.clemson.edu/cvel//auto/AuE835_Projects_2009/pillai_project.html
+https://illumin.usc.edu/automotive-active-safety-systems/
+ https://www.globalspec.com/learnmore/specialized_industrial_products/transportation_products/automotive_equipment_products/electronic_control_units_ecu
+https://www.electronicspecifier.com/products/sensors/active-and-passive-automotive-safety-systems
+https://insidegnss.com/adaptive-headlights-now-driven-by-gps/
+https://www.volkswagen.co.uk/en/technology/car-safety/driver-alert-system.html
+https://www.nissanusa.com/connect/features-apps/automatic-collision-notification.html
+https://www.embitel.com/automotive-insights/understanding-body-control-module-the-brain-of-body-electronics-in-automotive
+https://www.elprocus.com/different-microcontrollers-used-in-automobiles/
+ https://www.infineon.com/cms/en/product/microcontroller/32-bit-tricore-microcontroller/
+https://ieeexplore.ieee.org/abstract/document/8074444
+https://www.ingenieriaymecanicaautomotriz.com/que-es-una-memoria-eeprom-y-como-funciona/
+https://www.actronics.co.uk/news/how-does-a-ecu-work-in-a-car
+23. --https://www.ni.com/es-es/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/controller-area-network--can--overview.html
+24.-- https://www.freertos.org/
+25.-- https://www.freertos.org/a00090.html
+26.-- https://store.arduino.cc/products/arduino-mega-2560-rev3
+28. --https://github.com/feilipu/Arduino_FreeRTOS_Library
+29.- https://sojamo.de/libraries/controlP5/
+30.- https://sojamo.de/libraries/controlP5/#examples
+31.- https://sojamo.de/libraries/controlP5/#resources
+32. https://www.hwlibre.com/tesmistor/ 

@@ -1,7 +1,15 @@
 \chapter{Descripción del problema}
+
+\fancyhead[R]{2. Descripción del problema}
+
+\noindent\fbox{
+	\parbox{\textwidth}{
+    En este capítulo se tratará el problema que se va a intentar abordar en este trabajo, junto con una descripción del mismo, y los objetivos y restricciones para su solución.
+	}
+}
 \section{El problema}
 
-Debido a los avances nombrados en la introducción, la complejidad que supone entender cómo pueden funcionar todos los módulos que componen los vehículos actuales, puesto que son sistemas demasiado intrincados para que alguien que no pertenezca al campo de estudio/trabajo de estos puedan tener más que una imagen general del conjunto. \\
+Debido a los avances nombrados en la introducción, la complejidad que supone entender cómo pueden funcionar todos los módulos que componen los vehículos actuales puede ser el factor que evite que una multitud de personas, aun interesadas por el tema, no encuentren el punto de inicio para comenzar a investigar la tecnología. Además, existe una gran cantidad de información de estos sistemas que no se desvela por los fabricantes de vehículos, debido al espionaje industrial y los plagios de otras empresas.
 
 Podemos resumir las cuestiones que conforman el problema en los siguientes puntos:
 
@@ -12,17 +20,17 @@ Podemos resumir las cuestiones que conforman el problema en los siguientes punto
 
     \item A pesar de estas desventajas, los vehículos se están actualizando a pasos agigantados cada año, y comprender las partes más importantes del conjunto podría ser muy útil para el usuario medio de estos en su día a día.
 
-    \item Este proyecto puede aportar un enfoque dinámico para un primer acercamiento de la juventud al automovilismo actual.
+    \item Este proyecto puede aportar un enfoque dinámico para un primer acercamiento de los más jóvenes al automovilismo actual.
 \end{itemize}
 
 
 \section{Solucion propuesta}
 
-La solución que se propone es la creación de un sistema que emule la ECU de un vehículo, pero de manera simplificada, mediante un sistema empotrado que soporte un sistema operativo de tiempo real para poder atender a todas las peticiones en un tiempo de respuesta acotado. 
+La solución que se propone es la creación de un sistema que emule la ECU de un vehículo aunque de manera simplificada, mediante un sistema empotrado que soporte un sistema operativo de tiempo real, con el objetivo de poder atender a todas las peticiones en un tiempo de respuesta acotado. 
 
 Para mantener esta Unidad de Control Electrónico (ó \textit(ECU)) accesible y poder desarrollar el proyecto sin tener que hacer una gran inversión económica, utilizaremos software de código abierto así como componentes de bajo coste para la construcción.
 
-Si la temporización nos lo permite, también se podrán implementar estos sistemas en una maqueta de un vehículo, además de visualizar los valores de los módulos en un programa en un computador remoto.  
+Si la temporización nos lo permite, también se podrán implementar estos sistemas en una maqueta de un vehículo, además de visualizar los valores de los módulos en un programa en un computador mediante una interfaz de usuario.
 
 
 \section{Restricciones}
@@ -30,8 +38,7 @@ Si la temporización nos lo permite, también se podrán implementar estos siste
 \begin{itemize}
 \item Se priorizará el uso de componentes asequibles y con licencia \textit{open source}, para mantener el proyecto accesible al público general.
 \item No se utilizará \textit{hardware} ni \textit{software} que sea profesional en el campo del automovilismo, pues no se dispone de los recursos económicos necesarios para tal fin.
-\item El proyecto tendrá un tiempo acotado, siendo el fin de este periodo la convocatoria ordinaria, situada en Junio de 2023.
-
+\item El proyecto tendrá un tiempo acotado, siendo el fin de este periodo la convocatoria extraordinaria, en Septiembre de 2023.
 
 \end{itemize}
 
@@ -47,16 +54,16 @@ El objetivo general de este trabajo es la creación de un sistema que nos permit
     \item \textbf{O-I.1} - Comprender el funcionamiento de una centralita a nivel básico.
     \item \textbf{O-I.2} - Sintetizar un conjunto de funciones que podrían ser replicadas en el proyecto.
     \item \textbf{O-I.3} - Analizar las alternativas a la hora de implementar los diversos módulos.
-    \item \textbf{O-I.4} - Investigar sobre los sistemas de tiempo real y su evolución.
-    \item \textbf{O-I.4} - Entender las directrices del código propietario y buscar alternativas de código libre para implementar el proyecto.
-    \item \textbf{O-I.5} - Investigar acerca de la impresión 3D y encontrar una solución para implementar una figura prediseñada en el trabajo.
-    \item \textbf{O-I.6} - Analizar las licencias que se le podrían atribuir al proyecto y escoger una de estas acorde a las características.
-    \item \textbf{O-I.7} - Conocer el impacto de las ECU en el panorama automovilístico actual. 
+    \item \textbf{O-I.4} - Conocer los diferentes sistemas del vehículo y cómo interactúan con el entorno mediante sensores y actuadores.
+    \item \textbf{O-I.5} - Investigar sobre los sistemas de tiempo real y sus limitaciones.
+    \item \textbf{O-I.6} - Entender las directrices del código propietario y buscar alternativas de código libre para implementar el proyecto.
+    \item \textbf{O-I.7} - Analizar las licencias que se le podrían atribuir al proyecto y escoger una de estas acorde a las características.
+    \item \textbf{O-I.8} - Conocer el impacto de las ECU en el panorama automovilístico actual. 
 \end{itemize}
 
 \subsection{Objetivos de Diseño}
 \begin{itemize}
-    \item \textbf{O-D.1} - Diseñar personas y casos de uso para encontrar los límites y soluciones de los que precise el proyecto.
+    \item \textbf{O-D.1} - Diseñar actores y casos de uso para encontrar los límites y soluciones de los que precise el proyecto.
     \item \textbf{O-D.2} - Diseñar un esquemático para representar cómo interactúan los diferentes módulos con la ECU, así como mostrar los datos que se transmitan.
     \item \textbf{O-D.3} - Programar la ECU para la recepción, tratamiento y envío de datos.
     \item \textbf{O-D.4} - Implementar una interfaz de usuario para poder mostrar los módulos que buscamos.

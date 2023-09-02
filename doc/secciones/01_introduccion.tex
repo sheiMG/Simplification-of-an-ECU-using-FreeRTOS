@@ -1,19 +1,32 @@
+
+
 \chapter{Introducción}
 
+\fancyhead[R]{1. Introducción}
+
+\noindent\fbox{
+	\parbox{\textwidth}{
+    En este capítulo se tratará la motivación para haber escogido este trabajo, el estado actual de la tecnología a investigar, y la estructura que tendrá esta memoria. 
+	}
+}
 Este proyecto es software libre, y está liberado con la licencia \cite{gplv3}.
+
 
 \section{Motivación}
 
+La idea para el tema de este trabajo surgió de dos aficiones que tengo desde muy pequeña: los coches, y la informática. Siempre he querido comprender la arquitectura de los vehículos y, si bien este proyecto es una muestra muy pequeña, siento que me va a encaminar a seguir por esta rama durante mi carrera profesional. Además, el hecho de trabajar temas que no se han profundizado durante el grado me parece un reto necesario y, por qué no decirlo, divertido.
+
 \subsection{La complejidad de los automóviles actuales}
 
-Debido a la evolución tan rápida de los sistemas de los vehículos en las últimas décadas, nos encontramos con multitud de problemas que antes no habríamos tenido que experimentar, pero también nos otorgan una gran cantidad de información acerca de los diversos módulos del vehículo. 
-Esto nos dota de una mayor seguridad a la hora de poder comprobar, de un simple vistazo, si nuestro automóvil está en buen estado, pero... ¿Cómo manejar todos esos sistemas de manera simultánea y mostrárselo al conductor? 
+Debido a la evolución tan rápida de los sistemas de los vehículos en las últimas décadas, nos encontramos con multitud de problemas que antes no habríamos tenido que experimentar. Actualmente, incluso un mecanismo tan sencillo como un elevalunas puede fallar con relativa facilidad, así como también los sistemas de infoentretenimiento, la dirección asistida, y mil funciones más, que anteriormente se manejaban únicamente por cables, ahora tienen varias placas, y un firmware asociado. 
+
+Aunque estos sistemas también nos permiten obtener una gran cantidad de información acerca de los diversos módulos del vehículo, lo que nos otorga de una mayor seguridad y nos permite comprobar, de un simple vistazo, si nuestro automóvil está en buen estado, pero... ¿Cómo manejar todos esos sistemas de manera simultánea y mostrárselo al conductor? 
 
 
 
 \subsection{Los sistemas empotrados en la sociedad actual}
 
-Los sistemas empotrados forman parte de nuestra vida diaria, aunque en la mayoría de los casos nunca llegamos a verlos en sí mismos, sino ocultos en objetos cotidianos como los microondas, las vitrocerámicas, etcétera. Basan su funcionamiento en obtención de señales mediante sensores que dan información sobre el entorno y, tras procesar esos datos en un lapso de tiempo normalmente determinado, responden mediante un actuador dándonos la funcionalidad que buscamos. 
+Los sistemas empotrados forman parte de nuestra vida diaria, aunque en la mayoría de los casos nunca llegamos a verlos en sí mismos, sino que permanecen ocultos en objetos cotidianos como los microondas, las vitrocerámicas, etcétera. Basan su funcionamiento en la recepción de señales mediante sensores que obtienen información sobre el entorno y, tras procesar esos datos en un lapso de tiempo normalmente determinado, responden mediante un actuador (si fuera necesario) dándonos la funcionalidad que buscamos. Actualmente sería impensable prescindir de los \textit{embedded systems}, ya que resultan la forma más eficiente de construir sistemas informáticos dedicados, de tamaño reducido y adaptados a las características que requiera el objeto a controlar.
 
 
 \newpage
@@ -24,9 +37,10 @@ El trabajo está compuesto de los siguientes capítulos:
 \begin{itemize}
     \item \textbf{Capítulo 1} - Introducción: Capítulo actual, en el que se habla de las bases del trabajo que se va a realizar.
     \item \textbf{Capítulo 2} - Descripción del problema: En este capítulo se hablará del objetivo del trabajo, de las restricciones que se van a encontrar y de los requisitos para llevarlo a cabo.
-    \item \textbf{Capítulo 3} - Antecedentes: En este apartado se hablará de la tecnología de las ECU, y de toda la información necesaria para tener una visión completa del conjunto, todo esto para poder realizar el trabajo práctico con suficientes conocimientos.
-    \item \textbf{Capítulo 4} - ... [pend]
-    \item \textbf{Capítulo 5} - ... [pend]
-    \item \textbf{Capítulo 6} - ... [pend]
-    \item \textbf{Capítulo 7} - ... [pend]
+    \item \textbf{Capítulo 3} - Antecedentes: En este capítulo se hablará de la tecnología de las ECU, de su historia, y de aquellas tecnologías que sean relevantes para el proyecto. 
+    \item \textbf{Capítulo 4} - Estudio de requisitos: El grueso de este capítulo será la descripción de casos de uso, requisitos y actores que definen y delimitan el alcance del proyecto 
+    \item \textbf{Capítulo 5} - Planificación: En este capítulo se realizará una temporización para el proyecto, así como también otros factores importantes tales como el presupuesto y las fases de los sistemas a implementar. 
+    \item \textbf{Capítulo 6} - Análisis del problema: En el capítulo de análisis se tratarán los distintos problemas que se abordarán durante el desarrollo, véase las decisiones a la hora de escoger un hardware y un software determinado.
+    \item \textbf{Capítulo 7} - Implementación: Se detallará en este capítulo todo el proceso de implementación del proyecto, diferenciado por las fases definidas en el capítulo de planificación. 
+    \item \textbf{Capítulo 8} - Conclusiones y trabajos futuros - Este capítulo formará el cierre de la memoria, con valoración personal, análisis de lo que ha ido bien y lo que no, y trabajos que se podrán implementar en un futuro. 
 \end{itemize}

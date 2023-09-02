@@ -1,75 +1,4 @@
-#include <Arduino_FreeRTOS.h>
-#include <queue.h>
-#include <semphr.h>
-
-
-/* ------------------------PIN NUMBER DECLARATION---------------------------*/
-const int sensorMPIN = A0;
-const int sensorBPIN = A1;
-
-const int turnLPIN = 22;
-const int turnRPIN = 23;
-
-const int brakePIN = 25;
-
-const int neutralLPIN = 30;
-const int neutralRPIN = 31;
-
-const int in1ML = 9;
-const int in2ML = 8;
-const int comML = 13;
-
-const int in1MR = 11;
-const int in2MR = 10;
-const int comMR = 12;
-
-/* ---------------------- TEMPERATURE VARIABLES DECLARATION -----------------------------*/
-
-const int Rc = 10000;  // resistance value
-const int Vcc = 5;     // voltage value
-const float A = 1.11492089e-3;
-const float B = 2.372075385e-4;
-const float C = 6.954079529e-8;
-const float K = 2.5;  //f Disipation constant in mW/C
-
-int motorSensorValue = 0;
-
-/* ------------------------ FREERTOS TASK INITIALIZATION ---------------------------*/
-
-static void TaskTurnSignal(int dir);
-void taskHazardLights(void *pvParameters);
-void TaskBrakeLight(void *pvParameters);
-void TaskSerialValue(void *pvParameters);
-void TaskNeutralLight(void *pvParameters);
-
-void TaskMotorSpeed(void *pvParameters);
-
-void TaskReadTemp(char type);
-void TaskWriteTemp(char type);
-float getTemp(float raw);
-
-/* ------------------------FREERTOS SEMAPHORE DECLARATION ---------------------------*/
-
-SemaphoreHandle_t pserial_semaphore;
-
-/* ------------------------FREERTOS QUEUE DECLARATION ---------------------------*/
-
-
-QueueHandle_t tempM_queue;
-QueueHandle_t tempB_queue;
-
-/* ------------------------FREERTOS QUEUE DECLARATION ---------------------------*/
-
-
-TaskHandle_t taskturn_handle = NULL;
-TaskHandle_t taskemer_handle = NULL;
-TaskHandle_t taskbrake_handle = NULL;
-TaskHandle_t taskneutral_handle = NULL;
-TaskHandle_t taskvserial_handle = NULL;
-TaskHandle_t taskmtemp_handle = NULL;
-TaskHandle_t tasbtemp_handle = NULL;
-TaskHandle_t tasksmotor_handle = NULL;
-
+#include "arduino_cargui.h"
 /* ------------------------ SETUP FUNCTION (only runs once) ---------------------------*/
 
 
@@ -139,14 +68,26 @@ void loop() {}
 /* @dir : right or left turn signal PIN                                     */
 
 
-static void TaskTurnSignal(int dir) {
-  pinMode(dir, OUTPUT);
+static void TaskTurnSignal(char dir) {
+  int dir1;
+  int dir2;
+  if (dir == 'l'){
+    dir1 = turnLFPIN;
+    dir2 = turnLRPIN;
+  }else if (dir == 'r'){
+    dir1 = turnRFPIN;
+    dir2 = turnRRPIN;
+}
+  pinMode(dir1, OUTPUT);
+  pinMode(dir2, OUTPUT);
 
   for (;;) {
 
-    digitalWrite(dir, HIGH);
+    digitalWrite(dir1, HIGH);
+    digitalWrite(dir2, HIGH);
     vTaskDelay(200 / portTICK_PERIOD_MS);
-    digitalWrite(dir, LOW);
+    digitalWrite(dir1, LOW);
+    digitalWrite(dir2, LOW);
     vTaskDelay(200 / portTICK_PERIOD_MS);
   }
 }
@@ -154,15 +95,21 @@ static void TaskTurnSignal(int dir) {
 /* ------------------------ HAZARD LIGHTS FUNCTION ---------------------------*/
 
 void taskHazardLights(void *pvParameters) {
-  pinMode(turnLPIN, OUTPUT);
-  pinMode(turnRPIN, OUTPUT);
+  pinMode(turnLFPIN, OUTPUT);
+  pinMode(turnLRPIN, OUTPUT);
+  pinMode(turnRFPIN, OUTPUT);
+  pinMode(turnRRPIN, OUTPUT);
 
   for (;;) {
-    digitalWrite(turnLPIN, HIGH);
-    digitalWrite(turnRPIN, HIGH);
+    digitalWrite(turnLFPIN, HIGH);
+    digitalWrite(turnLRPIN, HIGH);
+    digitalWrite(turnRFPIN, HIGH);
+    digitalWrite(turnRRPIN, HIGH);
     vTaskDelay(200 / portTICK_PERIOD_MS);
-    digitalWrite(turnLPIN, LOW);
-    digitalWrite(turnRPIN, LOW);
+    digitalWrite(turnLFPIN, LOW);
+    digitalWrite(turnLRPIN, LOW);
+    digitalWrite(turnRFPIN, LOW);
+    digitalWrite(turnRRPIN, LOW);
     vTaskDelay(200 / portTICK_PERIOD_MS);
   }
 }
@@ -171,8 +118,10 @@ void taskHazardLights(void *pvParameters) {
 
 
 void TaskBrakeLight(void *pvParameters) {
-  pinMode(brakePIN, OUTPUT);
-  digitalWrite(brakePIN, HIGH);
+  pinMode(brakeLPIN, OUTPUT);
+  pinMode(brakeRPIN, OUTPUT);
+  digitalWrite(brakeLPIN, HIGH);
+  digitalWrite(brakeRPIN, HIGH);
   for (;;) {}
 }
 
@@ -223,13 +172,15 @@ void TaskSerialValue(void *pvParameters) {
         if (turnLStatus == 0) {
           if (turnRStatus == 1) {
             vTaskDelete(taskturn_handle);
-            digitalWrite(turnRPIN, LOW);
+            digitalWrite(turnRFPIN, LOW);
+            digitalWrite(turnRRPIN, LOW);
             turnRStatus = 0;
           }
-          xTaskCreate(TaskTurnSignal, "TaskTurn", 50, turnLPIN, 1, &taskturn_handle);
+          xTaskCreate(TaskTurnSignal, "TaskTurn", 50, 'l', 1, &taskturn_handle);
         } else {
           vTaskDelete(taskturn_handle);
-          digitalWrite(turnLPIN, LOW);
+          digitalWrite(turnLFPIN, LOW);
+          digitalWrite(turnLRPIN, LOW);
         }
         turnLStatus = (turnLStatus + 1) % 2;
         break;
@@ -238,13 +189,15 @@ void TaskSerialValue(void *pvParameters) {
         if (turnRStatus == 0) {
           if (turnLStatus == 1) {
             vTaskDelete(taskturn_handle);
-            digitalWrite(turnLPIN, LOW);
+            digitalWrite(turnLFPIN, LOW);
+            digitalWrite(turnLRPIN, LOW);
             turnLStatus = 0;
           }
-          xTaskCreate(TaskTurnSignal, "TaskTurn", 50, turnRPIN, 1, &taskturn_handle);
+          xTaskCreate(TaskTurnSignal, "TaskTurn", 50, 'r', 1, &taskturn_handle);
         } else {
           vTaskDelete(taskturn_handle);
-          digitalWrite(turnRPIN, LOW);
+          digitalWrite(turnRFPIN, LOW);
+          digitalWrite(turnRRPIN, LOW);
         }
         turnRStatus = (turnRStatus + 1) % 2;
         break;
@@ -259,8 +212,10 @@ void TaskSerialValue(void *pvParameters) {
         } else {
           vTaskDelete(taskemer_handle);
           vTaskResume(taskturn_handle);
-          digitalWrite(turnLPIN, LOW);
-          digitalWrite(turnRPIN, LOW);
+          digitalWrite(turnLFPIN, LOW);
+          digitalWrite(turnLRPIN, LOW);
+          digitalWrite(turnRFPIN, LOW);
+          digitalWrite(turnRRPIN, LOW);
         }
         emerStatus = (emerStatus + 1) % 2;
         break;
@@ -271,7 +226,8 @@ void TaskSerialValue(void *pvParameters) {
           xTaskCreate(TaskBrakeLight, "TaskBrakeLights", 128, NULL, 1, &taskbrake_handle);
         else {
           vTaskDelete(taskbrake_handle);
-          digitalWrite(brakePIN, LOW);
+          digitalWrite(brakeLPIN, LOW);
+          digitalWrite(brakeRPIN, LOW);
         }
         brakeStatus = (brakeStatus + 1) % 2;
         break;
@@ -409,8 +365,8 @@ void TaskMotorSpeed(void *pvParameters) {
       analogWrite(comMR, 0);
 
     } else {
-      analogWrite(comML, 100 + 12 * motorSensorValue);
-      analogWrite(comMR, 100 + 12 * motorSensorValue);
+      analogWrite(comML, 50 + 12 * motorSensorValue);
+      analogWrite(comMR, 50 + 12 * motorSensorValue);
     }
   }
 }
