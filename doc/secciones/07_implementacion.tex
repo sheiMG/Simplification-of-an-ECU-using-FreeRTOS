@@ -147,9 +147,9 @@ Esta función será la piedra angular del programa, pues será la encargada de r
 Se ha inicializado un semáforo que se encargue de asegurar que todas las lecturas y escrituras sobre el puerto serie estén protegidas, evitando así la pérdida de datos o pulsaciones del usuario. A continuación se detalla la sintaxis del bloqueo que impone sobre el semáforo la función del serial para facilitar la comprensión.
 
 \begin{verbatim}
-    if (xSemaphoreTake(pserial_semaphore, (TickType_t)5) == pdTRUE) {
+    if (xSemaphoreTake(serial_sem, (TickType_t)5) == pdTRUE) {
         value_serial = Serial.read();
-        xSemaphoreGive(pserial_semaphore);
+        xSemaphoreGive(serial_sem);
         vTaskDelay(20 / portTICK_PERIOD_MS);
       }  
 \end{verbatim}
@@ -297,7 +297,9 @@ Tras solucionar los errores y realizar la depuración del código, se ha organiz
 
 \section{Montaje en maqueta} 
 
-En este apartado se detallarán los pasos seguidos para integrar todos los componentes en una maqueta, así como todos los problemas y errores que se han cometido durante el montaje. Se ha comenzado con el prototipo que se ha utilizado para desarrollar el código de la aplicación, que figura en la siguiente imagen.
+En este apartado se detallarán los pasos seguidos para integrar todos los componentes en una maqueta, así como todos los problemas y errores que se han cometido durante el montaje. La comunicación con la maqueta se realizará por cable, captando las órdenes desde el ordenador mediante los botones de la interfaz, y siendo esta quien enviará la orden al programa por el puerto serie, configurado a 9600 baudios, para ser recibida por medio de un USB por la placa, que ejecutará las acciones pertinentes.\newline
+
+ Se ha comenzado con el prototipo que se ha utilizado para desarrollar el código de la aplicación, que figura en la siguiente imagen.
 
 \begin{figure}[H]
     \centering

@@ -9,9 +9,7 @@
 }
 \section{Etapas}
 
-Para comenzar la planificación de la implementación del proyecto, debemos tener en cuenta el tiempo de aprendizaje de las herramientas a utilizar. Se tiene un conocimiento avanzado de Arduino debido a las asignaturas cursadas en la carrera, así como por proyectos realizados de manera autónoma durante el transcurso de la misma, por lo que no será incluído en la planificación. 
-
-Se marcarán los siguientes hitos a planificar durante el tiempo en el que se desarrolle el proyecto, así como temporización de los mismos en la siguiente sección y una breve explicación de cada uno de ellos. 
+Para comenzar la planificación de la implementación del proyecto, debemos tener en cuenta el tiempo de aprendizaje de las herramientas a utilizar. Se marcarán los siguientes hitos a planificar durante el tiempo en el que se desarrolle el proyecto, así como temporización de los mismos en la siguiente sección y una breve explicación de cada uno de ellos. 
 
 \subsection{Aprendizaje de FreeRTOS}
 
@@ -25,7 +23,7 @@ Esta tarea incluye la lectura de la documentación de la librería, el estudio d
 
 En el ámbito de la interfaz, se debe conocer los fundamentos del lenguaje y entorno de desarrollo \textbf{Processing}, así como el repaso a conceptos y programación en Java, lenguaje en el que está basado. \cite{processing}
 
-Como se ha indicado anteriormente, se utilizará la librería \textbf{ControlP5},\cite{controlP5}, desarrollada por Andreas Schlegel, que permitirá una construcción de la interfaz de usuario más rápida e intuitiva. Se deberán conocer las herramientas que provee, la manera en la que está programada, y revisar algunos de los ejemplos que se exponen en su página web \cite{cp5_examples} para cada uno de los subsistemas necesarios para este proyecto.
+Como se ha indicado anteriormente, se utilizará la librería \textbf{ControlP5}, que permitirá una construcción de la interfaz de usuario más rápida e intuitiva. Se deberán conocer las herramientas que provee, la manera en la que está programada, y revisar algunos de los ejemplos que se exponen en su página web \cite{cp5_examples} para cada uno de los subsistemas necesarios para este proyecto.
 
 \begin{figure}[h]
     \centering
@@ -84,14 +82,30 @@ En esta temporización se consideran laborables los días de lunes a sábado, am
     \caption[Temporización inicial]{Temporización estimada del proyecto. Elaboración propia}
 
     \end{table}
+    \newpage
 
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=1\textwidth]{imagenes/gantt_base.png}
+        \includegraphics[width=1\textwidth]{imagenes/gantt_base_p1.png}
+    \end{figure}
+    
+
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{imagenes/gantt_base_p2.png}
+    \end{figure}
+    
+
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{imagenes/gantt_base_p3.png}
         \caption{Diagrama de Gantt con las tareas temporizadas. Elaboración propia en GanttProject}
     \end{figure}
     
 
+    \newpage
 \section{Presupuesto}
 
 A la hora de calcular el presupuesto necesario para el proyecto, debemos tener en cuenta tres factores principales: \textbf{coste del hardware}, \textbf{coste del software}, y el \textbf{coste de salarios} de los individuos implicados en el proyecto. Ninguno de estos es descartable ni se puede obviar, por lo que esta sección se desglosará en esas tres partes.
@@ -159,9 +173,31 @@ Los salarios medios se han extraído de la plataforma GlassDoor, con lo que se h
     \multicolumn{1}{|c|}{\cellcolor[HTML]{DAE8FC}{\color[HTML]{000000} \textbf{Puesto de trabajo}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}c@{}}Salario\\  por hora\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}{\color[HTML]{000000} \textbf{\begin{tabular}[c]{@{}c@{}}Horas por\\ semana\end{tabular}}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}c@{}}Semanas\\  de Trabajo\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}c@{}}Total\\ de horas\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}c@{}}Salario\\ Total\end{tabular}}} \\ \hline
     \textbf{\begin{tabular}[c]{@{}l@{}}Ingeniero de\\ Sistemas Empotrados\end{tabular}} & 17,19€/h & 21 horas & 7,5 sem & 157,5 horas & 2707,42€ \\ \hline
     \textbf{\begin{tabular}[c]{@{}l@{}}Desarrollador de \\ interfaces de usuario\end{tabular}} & 14,73€/h & 21 horas & 2 sem & 42 horas & 618,66€ \\ \hline
-    \end{tabular}%
-    }
 
+    \textbf{\begin{tabular}[c]{@{}l@{}}Total del proyecto\end{tabular}} &   & 21 horas & 9,5 sem & 299,5 horas & 3.326,08€ \\ \hline
+    \end{tabular}%
+    
+    }
     \caption[Presupuesto de salarios]{Lista de salarios requeridos para el proyecto. Elaboración propia}
 
     \end{table}
+
+    \subsection{Coste total}
+
+\begin{table}[H]
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{DAE8FC} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{DAE8FC}{\color[HTML]{000000} \textbf{Área del presupuesto}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{Coste}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}{\color[HTML]{000000} \textbf{\begin{tabular}[c]{@{}c@{}}Suma\\ Acumulada\end{tabular}}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}c@{}}Porcentaje\\ del total\end{tabular}}} \\ \hline
+    \textbf{Coste Hardware} & 125,80€ & 125,80€ & 3,64\% \\ \hline
+    \textbf{Coste Software} & 0€ & 125,80€ & 0\% \\ \hline
+    \textbf{Coste Salarios} & 3.326,08€ & 3.451,88 & 96,36\% \\ \hline
+    \textbf{Valor Acumulado} & 3.451,88€ & 3.451,88€ & 100\% \\ \hline
+    \end{tabular}%
+
+    \caption[Presupuesto total]{Suma total de presupuestos del proyecto. Elaboración propia}
+  
+
+    \end{table}
+
+    Si bien el coste del hardware utilizado puede parecer alto, no es comparable al coste de los salarios del equipo de desarrollo pues, aunque no se pueda observar de manera física, el tiempo que conllevan proyectos de este calibre y superiores, requieren de una gran cantidad de horas de trabajo. 

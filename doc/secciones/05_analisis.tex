@@ -239,16 +239,18 @@ Una vez analizados los puntos más importantes, se ha seleccionado una variedad 
 
     \end{table}
 
-    Teniendo en cuenta esta tabla, comenzamos a descartar aquellos que superen el presupuesto inicial de 50\$. Después, aquellas que no tengan soporte para FreeRTOS. La elección final, entre la placa Teensy y la arduino mega, es mayormente por la documentación y el soporte que tengan las placas. Se ha escogido la \textbf{Arduino Mega 2560} porque, además de dicha documentación, facilita el montaje del prototipo gracias a sus pines, evitando así la necesidad de soldar ni de una protoboard.
+    Teniendo en cuenta esta tabla, comenzamos a descartar aquellos que superen el presupuesto inicial de 50\$. Después, aquellas que no tengan soporte para FreeRTOS. La elección final, entre la placa Teensy y la arduino mega, es mayormente por la documentación y el soporte que tengan las placas. Se ha escogido la \textbf{Arduino Mega 2560} porque, además de dicha documentación, facilita el montaje del prototipo gracias a sus pines, evitando así la necesidad de soldar ni de una protoboard. Otra razón de peso para elegir esta tecnología es que tiene un conocimiento avanzado de Arduino debido a las asignaturas cursadas en la carrera, así como por proyectos realizados de manera autónoma durante el transcurso de la misma, por lo que reducirá los tiempos de aprendizaje y programación. 
 
+ \section{Elección de software para la interfaz}
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=1\textwidth]{imagenes/pinout_amega2560.png}
-        \caption{Esquema de pines de la Arduino Mega 2560. Extraído de: \cite{arduino_mega}}
-    \end{figure}
+ A la hora de escoger una alternativa para crear interfaces de usuario, existen multitud de opciones válidas. Se ha estudiado la viabilidad de utilizar HTML, CSS y JavaScript para el desarrollo, pero se ha descartado por la complejidad a la hora de implementar la comunicación con el puerto serie, así como por la curva de dificultad y desconocimiento de JavaScript. También se ha planteado utilizar un Framework como React o Angular, pero han sido descartados por la razón anterior, y el tiempo que conllevaría aprender estas tecnologías. 
+
+ Por otra parte, Processing, una herramienta que se basa en el lenguaje Java, tiene mayor facilidad de implementación en proyectos de escala media-baja, como es el que se está realizando, así como también multitud de librerías que incluyen recursos útiles sin necesidad de realizarlos desde cero. Si bien no es el software más potente, cumple con su función y es la opción sencilla de utilizar, teniendo en cuenta que el foco central de este trabajo no es la creación de la GUI. 
+
+ A la hora de escoger la librería se han revisado varias opciones, como PUI y G4P, pero ambas carecían de visualización de temperaturas y estaban más orientadas a la creación de gráficos 3D, por lo que se ha optado por ControlP5. 
+
+ ControlP5\cite{controlP5} es una librería desarrollada por Andreas Schlegel, que basa su uso en la creación de gráficos sencillos para interfaces de usuario, tales como botones, visualizadores de valores y ruedas o \textit{knobs} para variar valores. Es una herramienta de fácil implementación y aprendizaje, con multitud de alternativas de uso, y que posee todo lo necesario para realizar la GUI de este proyecto. 
  
-
 \section{Elección de periféricos}
  
 Si bien no es una parte tan importante de la selección de componentes, escoger un buen periférico puede facilitar las labores de montaje y programación. No todos los periféricos pueden ser válidos en este proyecto, pues existen restricciones de precio y tamaño, por lo que se tiene que tener en cuenta estos parámetros a la hora de escoger. 
